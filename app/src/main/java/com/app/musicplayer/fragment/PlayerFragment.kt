@@ -3,7 +3,6 @@ package com.app.musicplayer.fragment
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,13 +13,13 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.musicplayer.R
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.BlurTransformation
-import java.time.Duration
 
 class PlayerFragment : Fragment() {
 
@@ -111,29 +110,39 @@ class PlayerFragment : Fragment() {
         val myAdapter = MyAdapter(songNameList,artistNameList,durationList,albumCoverList)
 
 
-        playPauseBtn.setOnClickListener(View.OnClickListener {
-            if(handlePlay){
+        playPauseBtn.setOnClickListener {
+            if (handlePlay) {
                 handlePlay = false
-                playPauseBtn.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pause))
-            }else{
+                playPauseBtn.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.pause
+                    )
+                )
+            } else {
                 handlePlay = true
-                playPauseBtn.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.play))
+                playPauseBtn.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.play
+                    )
+                )
             }
-        })
+        }
 
-        fastForwardBtn.setOnClickListener(View.OnClickListener {
+        fastForwardBtn.setOnClickListener {
             val currentProgress = seekBar.progress
             if (currentProgress < seekBar.max) {
                 seekBar.progress = currentProgress + 10
             }
-        })
+        }
 
-        rewindBtn.setOnClickListener(View.OnClickListener {
+        rewindBtn.setOnClickListener {
             val currentProgress = seekBar.progress
             if (currentProgress > 0) {
                 seekBar.progress = currentProgress - 10
             }
-        })
+        }
 
         myAdapter.setOnItemClickListener(object: MyAdapter.OnItemClickListener{
             override fun onItemClick(position: Int) {
