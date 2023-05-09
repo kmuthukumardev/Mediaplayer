@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Music Player</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fast_rewind">Fast rewind</string>
+    <string name="play">Play/Pause</string>
+    <string name="fast_forward">Fast forward</string>
+    <string name="back">Back</string>
+    <string name="songs">Songs</string>
+    <string name="song_name">Havana</string>
+    <string name="remain_duration">-01:23</string>
+    <string name="artist_name">Camila</string>
+    <string name="duration">3:43</string>
+    <string name="more">...</string>
+    <string name="photo_frag">Photos</string>
+    <string name="call_frag">Call</string>
+    <string name="menu_frag">Menu</string>
+    <string name="nav_frag">Navigation</string>
+    <string name="sync_frag">Cloud Sync</string>
+    <string name="widget_frag">Widgets</string>
+</resources>
